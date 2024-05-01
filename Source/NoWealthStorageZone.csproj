@@ -25,7 +25,7 @@
     </ItemGroup>
     
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File &quot;D:\Games\Rimworld\Rimworld\RestartRimworld.ps1&quot;" />
+        <Exec Command="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File &quot;D:\Steam\steamapps\common\RimWorld\RestartRimworld.ps1&quot;" />
     </Target>
 
 </Project>
