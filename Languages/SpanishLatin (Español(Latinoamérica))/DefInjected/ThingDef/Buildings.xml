@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <HiddenShelf.label>Estante Oculto</HiddenShelf.label>
+    <HiddenShelf.description>Un estante oculto de triple pila que mantendrá el valor de los artículos oculto a los demás. Mientras los artículos estén almacenados en este estante, su valor no afectará la riqueza de la colonia.\n ¡El doble del costo del estante pequeño normal debido a la tecnología de camuflaje patentada!</HiddenShelf.description>
+    <HiddenShelfSmall.label>Estante pequeño oculto</HiddenShelfSmall.label>
+    <HiddenShelfSmall.description>Un pequeño estante oculto de triple pila que mantendrá el valor de los artículos oculto a los demás. Mientras los artículos estén almacenados en este estante, su valor no afectará la riqueza de la colonia.\n ¡El doble del costo del estante pequeño normal debido a la tecnología de camuflaje patentada!</HiddenShelfSmall.description>
+</LanguageData>
