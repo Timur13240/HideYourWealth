@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+
 <Defs>
+  <!--Hidden Wealth Storage Shelf -->
   <ThingDef ParentName="StorageShelfBase">
     <defName>HiddenShelf</defName>
-    <label>hidden shelf</label>
-    <description>A hidden triple-stack shelf that will keep the items value hidden from others. As long as the items are stored on this shelf, their worth will not affect the colony's wealth.</description>
+    <label>stealth shelf</label>
+    <description>A hidden triple-stack shelf that will keep the items value hidden from others. As long as the items are stored on this shelf, their worth will not affect the colony's wealth.\n Twice the cost of the regular shelf due to pattented camoflaging technology!</description>
     <graphicData>
       <texPath>Things/Building/Furniture/HiddenShelf</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -21,7 +24,33 @@
     <designationHotKey>Misc12</designationHotKey>
     <building>
       <relatedBuildCommands>
-        <li>ShelfSmall</li>
+        <li>HiddenShelfSmall</li>
+      </relatedBuildCommands>
+    </building>
+  </ThingDef>
+
+  <!--Small Hidden Wealth Storage Shelf -->
+  <ThingDef ParentName="StorageShelfBase">
+    <defName>HiddenShelfSmall</defName>
+    <label>small stealth shelf</label>
+    <description>A hidden small triple-stack shelf that will keep the items value hidden from others. As long as the items are stored on this shelf, their worth will not affect the colony's wealth.\n Twice the cost of the regular small shelf due to pattented camoflaging technology!</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/HiddenShelfSmall</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <costStuffCount>20</costStuffCount>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints> 
+      <Mass>4</Mass>
+      <WorkToBuild>250</WorkToBuild>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">2.5</StyleDominance>
+    </statBases>
+    <size>(1,1)</size>
+    <building>
+      <relatedBuildCommands>
+        <li>HiddenShelf</li>
       </relatedBuildCommands>
     </building>
   </ThingDef>
