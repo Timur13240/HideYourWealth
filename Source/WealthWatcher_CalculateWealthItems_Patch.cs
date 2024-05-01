@@ -19,7 +19,7 @@ public static class WealthWatcher_CalculateWealthItems_Patch
             __result -= CalculateHiddenWealth();
         } catch (Exception)
         {
-            //I'm lazy, and don't want to deal with exceptions :P
+            //I'm lazy, and don't want to deal with exceptions, since they seem to only happen at the beginning of the game :P
         }
     }
     
@@ -29,11 +29,15 @@ public static class WealthWatcher_CalculateWealthItems_Patch
     /// <returns>The total market value of items in "HiddenShelf" objects.</returns>
     private static float CalculateHiddenWealth()
     {
+        /*
+         * TODO: There must be a way to be able to define in a def that a building is a hidden storage building. But since there is so few of them, I'm not going to bother with it.
+         */
+        
         var hiddenWealthItems = 
                     //Get all things on the map
             Find.CurrentMap.listerThings.AllThings
-                    //Filter out things that are not HiddenShelf
-            .Where(x => x.def == ThingDef.Named("HiddenShelf"))
+                    //Filter out things that are not Hidden Storage Buildings
+            .Where(x => HywMod.GetHiddenStorageBuildings().Contains(x.def))
                     //Get all cells occupied by the HiddenShelf
             .SelectMany(GenAdj.CellsOccupiedBy)
                     //Get all things at those cells
@@ -43,4 +47,7 @@ public static class WealthWatcher_CalculateWealthItems_Patch
         //Return the sum of the market value of all items in HiddenShelf objects
         return hiddenWealthItems.Sum(item => item.MarketValue * item.stackCount);
     }
+    
+
+
 }
