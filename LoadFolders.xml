@@ -3,6 +3,6 @@
     <v1.5>
         <li>/</li>
         <li>1.5</li>
-        <li IfModActive="Ludeon.Rimworld.Biotech">Biotech/1.5</li>
+        <li IfModActive="Ludeon.Rimworld.Biotech">Biotech</li>
     </v1.5>
 </loadFolders>
