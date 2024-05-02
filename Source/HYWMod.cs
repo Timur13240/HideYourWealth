@@ -9,9 +9,27 @@ namespace HideYourWealth;
 /// </summary>
 public class HywMod : Mod
 {
-    public static HYWSettings Settings;
-    public static List<ThingDef> HiddenStorageBuildingDefs = new List<ThingDef>();
-    public static List<ThingDef> DeepStorageBuildingDefs = new List<ThingDef>();
+    /// <summary>
+    /// The settings for the mod.
+    /// </summary>
+    public static HYWSettings? Settings;
+    
+    /// <summary>
+    /// A cache of all hidden storage building defs.
+    /// </summary>
+    private static List<ThingDef> _hiddenStorageBuildingDefs = new List<ThingDef>();
+    
+    /// <summary>
+    /// A cache of all deep storage building defs.
+    /// </summary>
+    private static List<ThingDef> _deepStorageBuildingDefs = new List<ThingDef>();
+    
+    /// <summary>
+    /// Default constructor for the mod.
+    /// Ran on game start.
+    /// Sets up the mod settings and patches the game.
+    /// </summary>
+    /// <param name="content"> The content pack to load the mod from. </param>
     public HywMod(ModContentPack content) : base(content)
     {
         Settings = GetSettings<HYWSettings>();
@@ -21,6 +39,10 @@ public class HywMod : Mod
     
     public override string SettingsCategory() => "Hide Your Wealth";
     
+    /// <summary>
+    /// Draws the settings window for the mod.
+    /// </summary>
+    /// <param name="inRect"> The rectangle to draw the settings window in. </param>
     public override void DoSettingsWindowContents(Rect inRect)
     {
         Listing_Standard listingStandard = new Listing_Standard();
@@ -30,6 +52,10 @@ public class HywMod : Mod
         Settings.Write();
     }
     
+    /// <summary>
+    /// Gets all hidden storage building defs.
+    /// </summary>
+    /// <returns> A list of all hidden storage building defs. </returns>
     public static List<ThingDef> GetHiddenStorageBuildingDefs()
     {
         if (HiddenStorageBuildingDefs.Count == 0)
