@@ -4,5 +4,6 @@
         <li>/</li>
         <li>1.5</li>
         <li IfModActive="Ludeon.Rimworld.Biotech">Biotech</li>
+        <li IfModActive="LWM.DeepStorage">DeepStorage</li>
     </v1.5>
 </loadFolders>

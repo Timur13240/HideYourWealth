@@ -29,7 +29,7 @@ public static class WealthWatcher_CalculateWealthItems_Patch
     /// <returns> The total market value of all hidden items. </returns>
     private static float FindHiddenItemWealth()
     {
-        var buildingDefs = HywMod.GetCachedHiddenStorageBuildingDefs();
+        var buildingDefs = HywMod.GetHiddenStorageBuildingDefs();
         if (buildingDefs.Count == 0) return 0;
         
         var buildings = Find.CurrentMap.listerBuildings.allBuildingsColonist

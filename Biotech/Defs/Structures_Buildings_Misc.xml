@@ -16,7 +16,6 @@
 		</graphicData>
 		<modExtensions>
 			<li Class="NoWealthStorageZone.HiddenItemStorageBuilding">
-				<hideContents>true</hideContents>
 			</li>
 		</modExtensions>
 		<castEdgeShadows>true</castEdgeShadows>

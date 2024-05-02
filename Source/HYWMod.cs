@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using UnityEngine;
 using Verse;
 namespace NoWealthStorageZone;
 
@@ -8,19 +9,47 @@ namespace NoWealthStorageZone;
 /// </summary>
 public class HywMod : Mod
 {
-    private static List<ThingDef> HiddenStorageBuildings {get; set;} = new();
+    public static HYWSettings Settings;
+    public static List<ThingDef> HiddenStorageBuildingDefs = new List<ThingDef>();
+    public static List<ThingDef> DeepStorageBuildingDefs = new List<ThingDef>();
     public HywMod(ModContentPack content) : base(content)
     {
+        Settings = GetSettings<HYWSettings>();
         var harmony = new Harmony("vnull.HideYourWealth");
         harmony.PatchAll();
     }
     
-    public static List<ThingDef> GetCachedHiddenStorageBuildingDefs()
+    public override string SettingsCategory() => "Hide Your Wealth";
+    
+    public override void DoSettingsWindowContents(Rect inRect)
     {
-            if (HiddenStorageBuildings.Count != 0) return HiddenStorageBuildings;
-            HiddenStorageBuildings = DefDatabase<ThingDef>.AllDefsListForReading
+        Listing_Standard listingStandard = new Listing_Standard();
+        listingStandard.Begin(inRect);
+        listingStandard.CheckboxLabeled("Hide Wealth inside Deep Storage Containers", ref Settings.DeepStorageHidesContents);
+        listingStandard.End();
+        Settings.Write();
+    }
+    
+    public static List<ThingDef> GetHiddenStorageBuildingDefs()
+    {
+        if (HiddenStorageBuildingDefs.Count == 0)
+        {
+            HiddenStorageBuildingDefs = DefDatabase<ThingDef>.AllDefsListForReading
                 .Where(def => def.HasModExtension<HiddenItemStorageBuilding>())
                 .ToList();
-            return HiddenStorageBuildings;
+        }
+        if (DeepStorageBuildingDefs.Count == 0)
+        {
+            DeepStorageBuildingDefs = DefDatabase<ThingDef>.AllDefsListForReading
+                .Where(def => def.HasModExtension<DeepStorageHiddenItemStorageBuilding>())
+                .ToList();
+        }
+        
+        var output = new List<ThingDef>(HiddenStorageBuildingDefs);
+        if (Settings.DeepStorageHidesContents)
+        {
+            output.AddRange(DeepStorageBuildingDefs);
+        }
+        return output;
     }
 }
