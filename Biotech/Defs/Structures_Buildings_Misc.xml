@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+      	<!--Hidden Gene -->
+	<ThingDef ParentName="GeneBuildingBase">
+		<defName>HiddenGeneBank</defName>
+		<label>hidden gene bank</label>
+		<description>A hidden gene bank that will keep the Genepacks value hidden from others. Genepacks stored here will not affect the colony's wealth.\n Twice the cost of the regular gene bank due to patented camouflaging technology!</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/HiddenGenebank</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2, 1)</drawSize>
+			<shadowData>
+				<volume>(1.7, 0.3, 0.85)</volume>
+			</shadowData>
+		</graphicData>
+		<modExtensions>
+			<li Class="NoWealthStorageZone.HiddenItemStorageBuilding">
+				<hideContents>true</hideContents>
+			</li>
+		</modExtensions>
+		<castEdgeShadows>true</castEdgeShadows>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<tickerType>Rare</tickerType>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(2, 1)</size>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>5000</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_ContentsGenepackHolder</li>
+		</inspectorTabs>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<descriptionHyperlinks>
+			<ThingDef>Genepack</ThingDef>
+			<ThingDef>GeneAssembler</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_GenepackContainer">
+				<maxCapacity>4</maxCapacity>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>40</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>100</maxSimultaneous>
+				<maxDistance>12.9</maxDistance>
+				<showMaxSimultaneous>false</showMaxSimultaneous>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+</Defs>

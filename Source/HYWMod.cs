@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using RimWorld;
 using Verse;
 namespace NoWealthStorageZone;
 
@@ -14,22 +15,12 @@ public class HywMod : Mod
         harmony.PatchAll();
     }
     
-    public static List<ThingDef> GetHiddenStorageBuildings()
+    public static List<ThingDef> GetCachedHiddenStorageBuildingDefs()
     {
-        if (HiddenStorageBuildings.Count == 0)
-        {
-            try
-            {
-                HiddenStorageBuildings = new()
-                {
-                    ThingDef.Named("HiddenShelf"),
-                    ThingDef.Named("HiddenShelfSmall"),
-                };
-            } catch (Exception)
-            {
-                //I'm lazy, and don't want to deal with exceptions, since they seem to only happen at the beginning of the game :P
-            }
-        }
-        return HiddenStorageBuildings;
+            if (HiddenStorageBuildings.Count != 0) return HiddenStorageBuildings;
+            HiddenStorageBuildings = DefDatabase<ThingDef>.AllDefsListForReading
+                .Where(def => def.HasModExtension<HiddenItemStorageBuilding>())
+                .ToList();
+            return HiddenStorageBuildings;
     }
 }

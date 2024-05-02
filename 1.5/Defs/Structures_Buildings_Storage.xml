@@ -13,6 +13,11 @@
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(3,2)</drawSize>
     </graphicData>
+    <modExtensions>
+      <li Class="NoWealthStorageZone.HiddenItemStorageBuilding">
+        <hideContents>true</hideContents>
+      </li>
+    </modExtensions>
     <costStuffCount>40</costStuffCount>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints> 
@@ -39,6 +44,11 @@
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,2)</drawSize>
     </graphicData>
+    <modExtensions>
+      <li Class="NoWealthStorageZone.HiddenItemStorageBuilding">
+        <hideContents>true</hideContents>
+      </li>
+    </modExtensions>
     <uiIconScale>0.5</uiIconScale>
     <costStuffCount>20</costStuffCount>
     <statBases>
