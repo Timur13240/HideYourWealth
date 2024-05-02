@@ -9,13 +9,13 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <OutputPath>..\Assemblies\</OutputPath>
+      <OutputPath>..\1.5\Assemblies\</OutputPath>
     </PropertyGroup>
 
     <ItemGroup>
       <Reference Include="0Harmony">
           <Private>False</Private>
-        <HintPath>..\..\ColonyCopilot\Assemblies\0Harmony.dll</HintPath>
+        <HintPath>..\..\..\..\..\workshop\content\294100\2009463077\1.4\Assemblies\0Harmony.dll</HintPath>
       </Reference>
       <Reference Include="Assembly-CSharp">
             <Private>False</Private>
