@@ -2,7 +2,7 @@
 using RimWorld;
 using UnityEngine;
 using Verse;
-namespace NoWealthStorageZone;
+namespace HideYourWealth;
 
 /// <summary>
 /// The main class for the Hide Your Wealth mod.

@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace NoWealthStorageZone;
+namespace HideYourWealth;
 
 [HarmonyLib.HarmonyPatch(typeof(WealthWatcher), "CalculateWealthItems")]
 // ReSharper disable once InconsistentNaming

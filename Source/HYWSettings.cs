@@ -1,6 +1,6 @@
 using Verse;
 
-namespace NoWealthStorageZone;
+namespace HideYourWealth;
 
 public class HYWSettings : ModSettings
 {
