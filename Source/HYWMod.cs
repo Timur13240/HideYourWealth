@@ -1,11 +1,11 @@
 ﻿using HarmonyLib;
-using RimWorld;
 using UnityEngine;
 using Verse;
 namespace HideYourWealth;
 
 /// <summary>
 /// The main class for the Hide Your Wealth mod.
+/// Loads settings, patches the game, and provides utility functions.
 /// </summary>
 public class HywMod : Mod
 {
@@ -47,7 +47,12 @@ public class HywMod : Mod
     {
         Listing_Standard listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
-        listingStandard.CheckboxLabeled("Hide Wealth inside Deep Storage Containers", ref Settings.DeepStorageHidesContents);
+        if (Settings == null)
+        {
+            listingStandard.End();
+            return;
+        }
+        listingStandard.CheckboxLabeled("DeepStorageSettingDescription".Translate(), ref Settings.DeepStorageHidesContents);
         listingStandard.End();
         Settings.Write();
     }
@@ -58,23 +63,27 @@ public class HywMod : Mod
     /// <returns> A list of all hidden storage building defs. </returns>
     public static List<ThingDef> GetHiddenStorageBuildingDefs()
     {
-        if (HiddenStorageBuildingDefs.Count == 0)
+        if (DefDatabase<ThingDef>.DefCount == 0) return new List<ThingDef>();
+        if (Settings == null) return new List<ThingDef>();
+        
+        if (_hiddenStorageBuildingDefs.Empty())
         {
-            HiddenStorageBuildingDefs = DefDatabase<ThingDef>.AllDefsListForReading
-                .Where(def => def.HasModExtension<HiddenItemStorageBuilding>())
+            _hiddenStorageBuildingDefs = DefDatabase<ThingDef>.AllDefsListForReading
+                .Where(def => def.HasModExtension<WealthHider>())
                 .ToList();
         }
-        if (DeepStorageBuildingDefs.Count == 0)
+        if (_deepStorageBuildingDefs.Empty())
         {
-            DeepStorageBuildingDefs = DefDatabase<ThingDef>.AllDefsListForReading
-                .Where(def => def.HasModExtension<DeepStorageHiddenItemStorageBuilding>())
+            _deepStorageBuildingDefs = DefDatabase<ThingDef>.AllDefsListForReading
+                .Where(def => def.HasModExtension<DeepStorageWealthHider>())
                 .ToList();
         }
         
-        var output = new List<ThingDef>(HiddenStorageBuildingDefs);
+        var output = new List<ThingDef>(_hiddenStorageBuildingDefs);
+        //Add deep storage buildings if the setting is enabled
         if (Settings.DeepStorageHidesContents)
         {
-            output.AddRange(DeepStorageBuildingDefs);
+            output.AddRange(_deepStorageBuildingDefs);
         }
         return output;
     }
