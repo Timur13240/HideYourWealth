@@ -4,4 +4,6 @@
     <HiddenShelf.description>Un estante oculto de triple pila que mantendrá el valor de los artículos oculto a los demás. Mientras los artículos estén almacenados en este estante, su valor no afectará la riqueza de la colonia.\n ¡El doble del costo del estante pequeño normal debido a la tecnología de camuflaje patentada!</HiddenShelf.description>
     <HiddenShelfSmall.label>Estante pequeño oculto</HiddenShelfSmall.label>
     <HiddenShelfSmall.description>Un pequeño estante oculto de triple pila que mantendrá el valor de los artículos oculto a los demás. Mientras los artículos estén almacenados en este estante, su valor no afectará la riqueza de la colonia.\n ¡El doble del costo del estante pequeño normal debido a la tecnología de camuflaje patentada!</HiddenShelfSmall.description>
+    <HiddenGeneBank.label>Banco de genes oculto</HiddenGeneBank.label>
+    <HiddenGeneBank.description>Un banco de genes oculto que mantendrá el valor de los artículos oculto a los demás. El valor de los paquetes de genes no afectará la riqueza de la colonia.\n ¡El doble del costo del banco de genes normal gracias a la tecnología de camuflaje patentada!</HiddenGeneBank.description>
 </LanguageData>
