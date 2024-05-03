@@ -4,4 +4,6 @@
     <HiddenShelf.description>A hidden triple-stack shelf that will keep the items value hidden from others. As long as the items are stored on this shelf, their worth will not affect the colony's wealth.\n Twice the cost of the regular small shelf due to pattented camoflaging technology!</HiddenShelf.description>
     <HiddenShelfSmall.label>Small Stealth Shelf</HiddenShelfSmall.label>
     <HiddenShelfSmall.description>A hidden small triple-stack shelf that will keep the items value hidden from others. As long as the items are stored on this shelf, their worth will not affect the colony's wealth.\n Twice the cost of the regular small shelf due to pattented camoflaging technology!</HiddenShelfSmall.description>
+    <HiddenGeneBank.label>Hidden Gene Bank</HiddenGeneBank.label>
+    <HiddenGeneBank.description>A hidden gene bank that will keep the items value hidden from others. Genepacks worth will not affect the colony's wealth.\n Twice the cost of the regular gene bank due to patented camouflaging technology!</HiddenGeneBank.description>
 </LanguageData>

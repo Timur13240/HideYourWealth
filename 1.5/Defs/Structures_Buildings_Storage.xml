@@ -14,7 +14,7 @@
       <drawSize>(3,2)</drawSize>
     </graphicData>
     <modExtensions>
-      <li Class="NoWealthStorageZone.HiddenItemStorageBuilding">
+      <li Class="HideYourWealth.WealthHider">
       </li>
     </modExtensions>
     <costStuffCount>40</costStuffCount>
@@ -44,7 +44,7 @@
       <drawSize>(2,2)</drawSize>
     </graphicData>
     <modExtensions>
-      <li Class="NoWealthStorageZone.HiddenItemStorageBuilding">
+      <li Class="HideYourWealth.WealthHider">
       </li>
     </modExtensions>
     <uiIconScale>0.5</uiIconScale>

@@ -6,7 +6,7 @@
         <xpath>Defs/ThingDef[defName="LWM_DeepStorage"]</xpath>
         <value>
             <modExtensions>
-                <li Class="NoWealthStorageZone.DeepStorageHiddenItemStorageBuilding">
+                <li Class="HideYourWealth.DeepStorageWealthHider">
                 </li>
             </modExtensions>
         </value>
