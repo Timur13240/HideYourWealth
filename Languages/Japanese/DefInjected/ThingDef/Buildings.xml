@@ -4,4 +4,6 @@
     <HiddenShelf.description>アイテムの価値を他の人から隠しておく隠しトリプルスタック棚。 アイテムがこの棚に保管されている限り、その価値はコロニーの富に影響を与えません。\n 特許取得済みのカモフラージュ技術により、通常の小さな棚の 2 倍のコストがかかります.</HiddenShelf.description>
     <HiddenShelfSmall.label>小型ステルスシェルフ</HiddenShelfSmall.label>
     <HiddenShelfSmall.description>アイテムの価値を他の人から隠しておくための、小さな三重積みの隠し棚。 アイテムがこの棚に保管されている限り、その価値はコロニーの富に影響を与えません。\n 特許取得済みの偽装技術により、通常の小さな棚の 2 倍のコストがかかります!</HiddenShelfSmall.description>
+    <HiddenGeneBank.label>ヒドゥンジーンバンク</HiddenGeneBank.label>
+    <HiddenGeneBank.description>アイテムの価値を他の人から隠しておく隠された遺伝子バンク。 遺伝子パックの価値はコロニーの富には影響しません。\n 特許取得済みの偽装技術により、通常の遺伝子バンクの 2 倍のコストがかかります!</HiddenGeneBank.description>
 </LanguageData>
