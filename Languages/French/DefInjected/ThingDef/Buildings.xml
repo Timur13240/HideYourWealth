@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <HiddenShelf.label>Étagère furtive</HiddenShelf.label>
+    <HiddenShelf.description>Une étagère cachée à triple pile qui gardera la valeur des objets cachée aux autres. Tant que les objets sont stockés sur cette étagère, leur valeur n'affectera pas la richesse de la colonie.\n Deux fois le coût d'une petite étagère ordinaire grâce à une technologie de camouflage brevetée!</HiddenShelf.description>
+    <HiddenShelfSmall.label>Petite étagère furtive</HiddenShelfSmall.label>
+    <HiddenShelfSmall.description>Une petite étagère cachée à triple pile qui gardera la valeur des objets cachée aux autres. Tant que les objets sont stockés sur cette étagère, leur valeur n'affectera pas la richesse de la colonie.\n Deux fois le coût d'une petite étagère ordinaire grâce à une technologie de camouflage brevetée!</HiddenShelfSmall.description>
+    <HiddenGeneBank.label>Banque de gènes cachée</HiddenGeneBank.label>
+    <HiddenGeneBank.description>Une banque de gènes cachée qui gardera la valeur des éléments cachée aux autres. La valeur des packs de gènes n'affectera pas la richesse de la colonie.\n Deux fois le coût d'une banque de gènes classique grâce à une technologie de camouflage brevetée!</HiddenGeneBank.description></LanguageData>
